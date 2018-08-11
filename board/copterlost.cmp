@@ -1,0 +1,187 @@
+Cmp-Mod V01 Created by PcbNew   date = So 12 Aug 2018 01:10:57 CEST
+
+BeginCmp
+TimeStamp = 5BA185B1
+Path = /5B4E4DBA
+Reference = C1;
+ValeurCmp = 0.1uF;
+IdModule  = Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5BA185A0
+Path = /5B4E4967
+Reference = BT1;
+ValeurCmp = Battery_Cell;
+IdModule  = Battery:BatteryHolder_Keystone_104_1x23mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5BA185C4
+Path = /5B4E7C9C
+Reference = D1;
+ValeurCmp = LED;
+IdModule  = LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5BA185CC
+Path = /5B4E4AE2
+Reference = J1;
+ValeurCmp = 5V_Copter;
+IdModule  = TestPoint:TestPoint_Pad_D1.0mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5BA185D4
+Path = /5B4E4B3B
+Reference = J2;
+ValeurCmp = Ground;
+IdModule  = TestPoint:TestPoint_Pad_D1.0mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5BA185DC
+Path = /5B702E44
+Reference = J3;
+ValeurCmp = FC.Beeper-;
+IdModule  = TestPoint:TestPoint_Pad_D1.0mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5BA185E4
+Path = /5B714FFC
+Reference = J4;
+ValeurCmp = FC.Beeper+;
+IdModule  = TestPoint:TestPoint_Pad_D1.0mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5BA185EB
+Path = /5B4E769C
+Reference = LS1;
+ValeurCmp = Speaker;
+IdModule  = custom:Beeper;
+EndCmp
+
+BeginCmp
+TimeStamp = 5BA18600
+Path = /5B701CC6
+Reference = Q1;
+ValeurCmp = MMBT3904;
+IdModule  = Package_TO_SOT_SMD:SOT-23;
+EndCmp
+
+BeginCmp
+TimeStamp = 5BA18615
+Path = /5B7175B6
+Reference = Q2;
+ValeurCmp = MMBT3904;
+IdModule  = Package_TO_SOT_SMD:SOT-23;
+EndCmp
+
+BeginCmp
+TimeStamp = 5BA1862A
+Path = /5B4E64B4
+Reference = Q3;
+ValeurCmp = MMBT3904;
+IdModule  = Package_TO_SOT_SMD:SOT-23;
+EndCmp
+
+BeginCmp
+TimeStamp = 5BA1863B
+Path = /5B4F1597
+Reference = R1;
+ValeurCmp = 5k;
+IdModule  = Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5BA1864C
+Path = /5B4F14F2
+Reference = R2;
+ValeurCmp = 10k;
+IdModule  = Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5BA1865D
+Path = /5B71AB33
+Reference = R3;
+ValeurCmp = 10k;
+IdModule  = Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5BA1866E
+Path = /5B71AB3A
+Reference = R4;
+ValeurCmp = 5k;
+IdModule  = Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5BA1867F
+Path = /5B4E70A9
+Reference = R5;
+ValeurCmp = 330;
+IdModule  = Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5BA18690
+Path = /5B4EE3F9
+Reference = R6;
+ValeurCmp = 10k;
+IdModule  = Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5BA186A1
+Path = /5B71004D
+Reference = R7;
+ValeurCmp = 10k;
+IdModule  = Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5BA186B2
+Path = /5B70DB57
+Reference = R8;
+ValeurCmp = 5k;
+IdModule  = Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5BA186C3
+Path = /5B4E8573
+Reference = R9;
+ValeurCmp = 50;
+IdModule  = Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5BA186D4
+Path = /5B716BC3
+Reference = R10;
+ValeurCmp = 5k;
+IdModule  = Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5BA186EA
+Path = /5B4E9B5A
+Reference = SW1;
+ValeurCmp = SW_Push;
+IdModule  = custom:SW_SPST_B3U-1000P;
+EndCmp
+
+BeginCmp
+TimeStamp = 5BA18707
+Path = /5B4E48A4
+Reference = U1;
+ValeurCmp = ATTINY13-20SSU;
+IdModule  = Package_SO:SOIC-8_3.9x4.9mm_P1.27mm;
+EndCmp
+
+EndListe
