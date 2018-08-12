@@ -310,9 +310,6 @@ Text Label 2350 1300 2    50   ~ 0
 Batt-Sense
 Text Label 3400 1450 2    50   ~ 0
 Batt-Sense
-Wire Wire Line
-	1050 2150 900  2150
-Connection ~ 900  2150
 Text Label 3400 1250 2    50   ~ 0
 Button
 Wire Wire Line
@@ -538,7 +535,7 @@ L copterlost-rescue:R R3
 U 1 1 5B71AB33
 P 2400 1050
 F 0 "R3" V 2480 1050 50  0000 C CNN
-F 1 "10k" V 2400 1050 50  0000 C CNN
+F 1 "18k" V 2400 1050 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 2330 1050 50  0001 C CNN
 F 3 "" H 2400 1050 50  0001 C CNN
 	1    2400 1050
