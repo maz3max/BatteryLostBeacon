@@ -38,7 +38,7 @@ __attribute__((always_inline)) static void greeting(void) {
 }
 
 // 5v from copter 10k Pulldown -> PB1
-// Button 10k Pulldown -> PB2
+// Button -> PB2
 // Beeper out -> PB0
 ISR(PCINT0_vect) {
   uint8_t button_state = PINB & (1 << PB2);
@@ -54,6 +54,7 @@ ISR(PCINT0_vect) {
 int main(void) {
   power_all_disable();
   DDRB = (1 << PB0);
+  PORTB = (1 << PB0);  // enable pullup
   GIMSK |= (1 << PCIE);
   PCMSK |= (1 << PCINT1) | (1 << PCINT2);
   last_button_state = PINB & (1 << PB2);
