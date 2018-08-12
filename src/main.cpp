@@ -40,7 +40,7 @@ __attribute__((always_inline)) static void greeting(void) {
 // 5v from copter 10k Pulldown -> PB1
 // Button -> PB2
 // Beeper out -> PB0
-ISR(PCINT0_vect) {
+ISR(PCINT0_vect) {  // trigger on button or sense change
   uint8_t button_state = PINB & (1 << PB2);
   if (button_state != last_button_state) {
     last_button_state = button_state;
