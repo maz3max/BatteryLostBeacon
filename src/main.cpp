@@ -18,10 +18,10 @@ static bool checkBatteryLife(void) {
   ADCSRA = (1 << ADEN) | (1 << ADSC) | (0 << ADATE) | (0 << ADIE) |
            (0 << ADPS2) | (0 << ADPS1) | (0 << ADPS0);  // enable ADC
   while (ADCSRA & (1 << ADSC)) {
-    // warn at voltage of 2.7V
-    // 2.7 *(5/(18+5)) * 256 = 150.3
-    critical = (ADCH < 150) ? 1 : 0;
   }
+  // warn at voltage of 2.7V
+  // 2.7 *(5.1/(18+5.1)) * 256 = 152.6
+  critical = (ADCH < 152) ? 1 : 0;
   ADCSRA = 0;  // disable ADC
   power_adc_disable();
   return critical;
@@ -29,12 +29,13 @@ static bool checkBatteryLife(void) {
 
 __attribute__((always_inline)) static void greeting(void) {
   _delay_ms(2000);
+  PORTB &= ~(1 << PB3);
   PORTB |= (1 << PB0);
   for (uint8_t i = 0; i < 5; ++i) {
     _delay_ms(100);
-    PORTB ^= (1 << PB0);
+    PORTB ^= (1 << PB0) | (1 << PB3);
   }
-  batt_warning = checkBatteryLife();
+  // batt_warning = checkBatteryLife();
 }
 
 // 5v from copter 10k Pulldown -> PB1
@@ -53,8 +54,8 @@ ISR(PCINT0_vect) {  // trigger on button or sense change
 
 int main(void) {
   power_all_disable();
-  DDRB = (1 << PB0);
-  PORTB = (1 << PB0);  // enable pullup
+  DDRB = (1 << PB0) | (1 << PB3);
+  PORTB = (1 << PB2) | (1 << PB3);  // enable pullup
   GIMSK |= (1 << PCIE);
   PCMSK |= (1 << PCINT1) | (1 << PCINT2);
   last_button_state = PINB & (1 << PB2);
@@ -62,15 +63,17 @@ int main(void) {
 
   while (1) {
     if (batt_warning) {
-      PORTB = (1 << PB0);
-    } else if (go_to_sleep == 1 || (PINB & (1 << PB2)) || (PINB & (1 << PB1))) {
+      PORTB = (1 << PB0) | (0 << PB3);
+    } else if (go_to_sleep == 1 || !(PINB & (1 << PB2)) ||
+               (PINB & (1 << PB1))) {
       go_to_sleep = 0;
       PORTB &= ~(1 << PORTB0);
+      PORTB |= (1 << PORTB3);
       set_sleep_mode(SLEEP_MODE_PWR_DOWN);
       sei();
       sleep_mode();
     }
     _delay_ms(500);
-    PORTB ^= (1 << PB0);
+    PORTB ^= (1 << PB0) | (1 << PB3);
   }
 }
