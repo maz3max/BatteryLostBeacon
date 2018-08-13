@@ -439,7 +439,7 @@ L copterlost-rescue:R R8
 U 1 1 5B70DB57
 P 3650 2300
 F 0 "R8" H 3720 2346 50  0000 L CNN
-F 1 "5.1k" V 3650 2250 50  0000 L CNN
+F 1 "5.1k" V 3650 2200 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 3580 2300 50  0001 C CNN
 F 3 "" H 3650 2300 50  0001 C CNN
 	1    3650 2300
@@ -476,27 +476,16 @@ Wire Wire Line
 $Comp
 L copterlost-rescue:Conn_01x01 J4
 U 1 1 5B714FFC
-P 4700 2700
-F 0 "J4" H 4700 2800 50  0000 C CNN
-F 1 "FC.Beeper+" H 4700 2600 50  0000 C CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 4700 2700 50  0001 C CNN
-F 3 "" H 4700 2700 50  0001 C CNN
-	1    4700 2700
-	-1   0    0    1   
-$EndComp
-$Comp
-L copterlost-rescue:R R10
-U 1 1 5B716BC3
-P 5100 2700
-F 0 "R10" V 4893 2700 50  0000 C CNN
-F 1 "5k" V 5100 2700 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 5030 2700 50  0001 C CNN
-F 3 "" H 5100 2700 50  0001 C CNN
-	1    5100 2700
-	0    1    1    0   
+P 6450 2900
+F 0 "J4" H 6450 3000 50  0000 C CNN
+F 1 "FC.Beeper+" H 6450 2800 50  0000 C CNN
+F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 6450 2900 50  0001 C CNN
+F 3 "" H 6450 2900 50  0001 C CNN
+	1    6450 2900
+	1    0    0    1   
 $EndComp
 Wire Wire Line
-	4900 2700 4950 2700
+	6250 2900 6200 2900
 $Comp
 L Transistor_BJT:MMBT3904 Q2
 U 1 1 5B7175B6
@@ -509,14 +498,9 @@ F 3 "https://www.fairchildsemi.com/datasheets/2N/2N3904.pdf" H 5550 2700 50  000
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5250 2700 5300 2700
-Wire Wire Line
 	5300 2700 5300 2450
 Wire Wire Line
 	3650 2450 5300 2450
-Connection ~ 5300 2700
-Wire Wire Line
-	5300 2700 5350 2700
 Text Label 5850 3600 0    50   ~ 0
 Speaker
 $Comp
@@ -620,4 +604,7 @@ Wire Wire Line
 	6200 3600 6300 3600
 Wire Wire Line
 	3050 1150 3450 1150
+Wire Wire Line
+	5300 2700 5350 2700
+Connection ~ 6200 2900
 $EndSCHEMATC

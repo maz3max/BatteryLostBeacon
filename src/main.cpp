@@ -20,8 +20,8 @@ static bool checkBatteryLife(void) {
   while (ADCSRA & (1 << ADSC)) {
   }
   // warn at voltage of 2.7V
-  // 2.7 *(5.1/(18+5.1)) * 256 = 152.6
-  critical = (ADCH < 152) ? 1 : 0;
+  // 2.7 *(5.1/(18+5.1)) * 256 / 1.1 = 138.72
+  critical = (ADCH < 138) ? 1 : 0;
   ADCSRA = 0;  // disable ADC
   power_adc_disable();
   return critical;
@@ -35,7 +35,7 @@ __attribute__((always_inline)) static void greeting(void) {
     _delay_ms(100);
     PORTB ^= (1 << PB0) | (1 << PB3);
   }
-  // batt_warning = checkBatteryLife();
+  batt_warning = checkBatteryLife();
 }
 
 // 5v from copter 10k Pulldown -> PB1
@@ -62,8 +62,9 @@ int main(void) {
   greeting();
 
   while (1) {
-    if (batt_warning) {
-      PORTB = (1 << PB0) | (0 << PB3);
+    if (batt_warning && (PINB & (1 << PB2))) {
+      _delay_ms(100);
+      PORTB ^= (1 << PB0) | (1 << PB3);
     } else if (go_to_sleep == 1 || !(PINB & (1 << PB2)) ||
                (PINB & (1 << PB1))) {
       go_to_sleep = 0;
